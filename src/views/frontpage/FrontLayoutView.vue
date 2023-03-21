@@ -1,0 +1,16 @@
+<template>
+  <NavbarComponent></NavbarComponent>
+  <router-view></router-view>
+  <FooterComponent v-if="this.$route.name !== 'home'"></FooterComponent>
+</template>
+<script>
+import NavbarComponent from '@/components/NavbarComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
+export default {
+  components: {
+    NavbarComponent,
+    FooterComponent
+  }
+}
+</script>

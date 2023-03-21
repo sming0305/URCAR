@@ -1,0 +1,9 @@
+@import 'bootstrap/scss/functions';
+@import './helper/variables';
+@import 'bootstrap/scss/bootstrap';
+@import './helper/sweetAlert2/customstyling';
+@import './helper/base';
+
+@import './helper/mixin/mixin';
+@import './helper/component/component';
+@import './helper/utilities/utilities';
