@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # place .nojekyll to bypass Jekyll processing
-echo > .nojekyll
+echo $null > .nojekyll
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
@@ -24,6 +24,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:sming0305/sming0305.github.io.git main
 
 # if you are deploying to https://sming0305.github.io/Vue-W6
-git push -f https://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@github.com/sming0305/URCAR.git main:gh-pages
+git push -f git@github.com/sming0305/URCAR.git main:gh-pages
 
 cd -

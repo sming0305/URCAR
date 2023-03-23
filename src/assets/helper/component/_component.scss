@@ -1,0 +1,84 @@
+.banner {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1568988026871-cc639428479a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    55%,
+    99%,
+    100vh
+  );
+}
+.fullPageLayout--1 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1536617621572-1d5f1e6269a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    65%,
+    60%,
+    100vh
+  );
+}
+.fullPageLayout--2 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1587305032255-55bb50c4956b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80',
+    65%,
+    55%,
+    100vh
+  );
+}
+.fullPageLayout--3 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1635777076101-138fad6d0f80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    75%,
+    15%,
+    100vh
+  );
+}
+.fullPageLayout--4 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1553260188-75a8d6205b6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    center,
+    center,
+    100vh
+  );
+}
+.fullPageLayout--5 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1637704758199-dfa7835ca2df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80',
+    center,
+    9%,
+    100vh
+  );
+}
+.fullPageLayout--6 {
+  @include fullPageLayout(
+    'https://tesla-cdn.thron.com/delivery/public/image/tesla/1a5ba4b1-efd8-40bc-8b6d-e81bf8223e37/bvlatuR/std/2560x1440/Model-3-Performance-Hero-Desktop-LHD',
+    center,
+    9%,
+    100%
+  );
+}
+.fullPageLayout--7 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1571987502227-9231b837d92a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80',
+    center,
+    60%,
+    100%
+  );
+}
+.fullPageLayout--8 {
+  @include fullPageLayout(
+    'https://images.unsplash.com/photo-1585011650347-c59dbef5a823?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    center,
+    40%,
+    100%
+  );
+}
+
+.scroll-full-page {
+  @include lg {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+}
+
+.textLineOverflow--4{
+    @include text-overflowLine(4);
+  }

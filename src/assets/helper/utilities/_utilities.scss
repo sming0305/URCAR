@@ -1,0 +1,19 @@
+.bg-translucent-50 {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.bg-translucent-75 {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.bg-translucent-85 {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+.scroll-card {
+  scroll-snap-align: center;
+}
+
+.overflow-y-lg-scroll {
+  @include lg {
+    overflow-y: scroll;
+  }
+}

@@ -1,0 +1,27 @@
+@import 'sweetalert2/src/variables';
+
+
+$swal2-background: #fff;
+.swal2-actions {
+  margin-top: 0px !important;
+}
+.swal2-title {
+  background: #000 !important;
+  color: #fff !important;
+  padding: 16px !important;
+  border-radius: 5px 5px 0px 0px !important;
+}
+.swal2-html-container {
+  margin-bottom: 16px !important;
+}
+.swal2-confirm {
+  padding: 6px 24px !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+  box-shadow: none !important;
+}
+
+@import 'sweetalert2/src/sweetalert2';
