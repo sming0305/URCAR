@@ -24,6 +24,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:sming0305/sming0305.github.io.git main
 
 # if you are deploying to https://sming0305.github.io/Vue-W6
-git push -f git@github.com/sming0305/URCAR.git main:gh-pages
+git push -f https://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@github.com/sming0305/URCAR.git main:gh-pages
 
 cd -
