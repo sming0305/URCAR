@@ -136,7 +136,7 @@
 </template>
 
 <script>
-import payStore from '../../stores/payStore.js'
+import payStore from '@/stores/payStore.js'
 import { mapActions, mapState } from 'pinia'
 
 export default {

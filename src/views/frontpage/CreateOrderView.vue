@@ -111,7 +111,7 @@
 </template>
 
 <script>
-import payStore from '../../stores/payStore.js'
+import payStore from '@/stores/payStore.js'
 import { mapActions } from 'pinia'
 import { Field, Form, ErrorMessage, configure, defineRule } from 'vee-validate'
 import AllRules from '@vee-validate/rules'

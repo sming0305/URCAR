@@ -142,9 +142,9 @@
 </template>
 
 <script>
-import ProductCardComponent from '../../components/ProductCardComponent.vue'
-import FooterComponent from '../../components/FooterComponent.vue'
-import ArticleCardComponent from '../../components/ArticleCardComponent.vue'
+import ProductCardComponent from '@/components/ProductCardComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import ArticleCardComponent from '@/components/ArticleCardComponent.vue'
 
 export default {
   components: {

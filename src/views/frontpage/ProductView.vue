@@ -201,8 +201,8 @@
   </main>
 </template>
 <script>
-import productStore from '../../stores/productStore.js'
-import cartStore from '../../stores/cartStore.js'
+import productStore from '@/stores/productStore.js'
+import cartStore from '@/stores/cartStore.js'
 import { mapActions, mapState } from 'pinia'
 
 export default {

@@ -60,7 +60,7 @@
 
 <script>
 import { RouterLink } from 'vue-router'
-import articleStore from '../../stores/articleStore.js'
+import articleStore from '@/stores/articleStore.js'
 import { mapActions, mapState } from 'pinia'
 
 export default {

@@ -49,7 +49,7 @@
 import PaginationComponent from '@/components/PaginationComponent.vue'
 import ArticleCardComponent from '@/components/ArticleCardComponent.vue'
 
-import articleStore from '../../stores/articleStore.js'
+import articleStore from '@/stores/articleStore.js'
 import { mapActions, mapState } from 'pinia'
 
 export default {

@@ -179,8 +179,8 @@
   </main>
 </template>
 <script>
-import cartStore from '../../stores/cartStore.js'
-import ModalComponent from '../../components/ModalComponent.vue'
+import cartStore from '@/stores/cartStore.js'
+import ModalComponent from '@/components/ModalComponent.vue'
 import { mapActions, mapState } from 'pinia'
 export default {
   components: {
