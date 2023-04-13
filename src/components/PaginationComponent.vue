@@ -37,6 +37,7 @@
     </ul>
   </nav>
 </template>
+
 <script>
 import paginationStore from '../stores/paginationStore.js'
 import { mapActions, mapState } from 'pinia'

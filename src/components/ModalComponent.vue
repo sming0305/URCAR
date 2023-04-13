@@ -208,6 +208,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { mapActions, mapState } from 'pinia'
 import cartStore from '../stores/cartStore.js'

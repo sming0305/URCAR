@@ -134,6 +134,7 @@
     </section>
   </main>
 </template>
+
 <script>
 import payStore from '../../stores/payStore.js'
 import { mapActions, mapState } from 'pinia'

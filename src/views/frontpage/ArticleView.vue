@@ -24,8 +24,8 @@
               <div v-html="articleConvert" v-if="articleTemp.content !== undefined"></div>
             </div>
             <div class="d-flex justify-content-center">
-              <router-link to="/articleList" class="btn btn-dark rounded-0 px-20"
-                >返回列表</router-link
+              <RouterLink to="/articleList" class="btn btn-dark rounded-0 px-20"
+                >返回列表</RouterLink
               >
             </div>
           </div>
@@ -34,7 +34,7 @@
               <h3 class="mb-10">相關文章</h3>
               <ul>
                 <li v-for="article in showArticleList" :key="article.title">
-                  <router-link
+                  <RouterLink
                     :to="`/article/${article.id}`"
                     class="d-flex mb-10 border-bottom pb-10 justify-content-between link-dark"
                     @click="getTargetArticle(article.id)"
@@ -47,7 +47,7 @@
                       :alt="article.title"
                       style="height: 100px; width: 100px"
                     />
-                  </router-link>
+                  </RouterLink>
                 </li>
               </ul>
             </div>
@@ -57,7 +57,9 @@
     </section>
   </main>
 </template>
+
 <script>
+import { RouterLink } from 'vue-router'
 import articleStore from '../../stores/articleStore.js'
 import { mapActions, mapState } from 'pinia'
 
@@ -71,9 +73,11 @@ export default {
   mounted() {
     this.getTargetArticle(this.$route.params.id)
     this.getArticles(this.$route.name)
-  }
+  },
+  components: { RouterLink }
 }
 </script>
+
 <style scoped>
 .top-80 {
   top: 120px !important;

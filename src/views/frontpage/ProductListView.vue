@@ -61,6 +61,7 @@
     </section>
   </main>
 </template>
+
 <script>
 import ProductCardComponent from '../../components/ProductCardComponent.vue'
 import PaginationComponent from '../../components/PaginationComponent.vue'

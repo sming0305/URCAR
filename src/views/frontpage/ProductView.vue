@@ -175,8 +175,8 @@
                       ><small>! 預約資訊請選擇完整後方可繼續預約。 !</small></span
                     >
                     <div class="d-flex justify-content-end">
-                      <router-link to="/productList" class="btn btn-dark rounded-1 me-10"
-                        >重新選擇車款</router-link
+                      <RouterLink to="/productList" class="btn btn-dark rounded-1 me-10"
+                        >重新選擇車款</RouterLink
                       >
                       <input type="submit" class="btn btn-dark rounded-1" value="建立預約" />
                     </div>

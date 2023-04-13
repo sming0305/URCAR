@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="col-12 col-xl-10">
-            <ArticleCardComponent></ArticleCardComponent>
+            <ArticleCardComponent />
           </div>
         </div>
         <div class="d-flex justify-content-end">
@@ -44,6 +44,7 @@
     </section>
   </main>
 </template>
+
 <script>
 import PaginationComponent from '@/components/PaginationComponent.vue'
 import ArticleCardComponent from '@/components/ArticleCardComponent.vue'
@@ -64,6 +65,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .top-80 {
   top: 120px !important;

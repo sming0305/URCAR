@@ -92,11 +92,11 @@
       <div class="container h-100 pt-30">
         <div class="mb-30">
           <h2 class="fs-20 fw-bold border-bottom border-2 pb-15 border-dark mb-30">熱門方案</h2>
-          <ProductCardComponent></ProductCardComponent>
+          <ProductCardComponent />
         </div>
         <div class="d-flex justify-content-center">
-          <router-link to="/productList" class="btn btn-dark rounded-0 px-20 mt-30"
-            >查看完整方案</router-link
+          <RouterLink to="/productList" class="btn btn-dark rounded-0 px-20 mt-30"
+            >查看完整方案</RouterLink
           >
         </div>
       </div>
@@ -115,10 +115,10 @@
             <p class="fw-bold text-white fs-16 mb-12 text-md-start text-center">
               Model S，體驗無與倫比的駕馭樂趣
             </p>
-            <router-link
+            <RouterLink
               to="/product/-NQNaOmzZubS9jTYs7zF"
               class="btn btn-outline-light rounded-0 px-20"
-              >立即預約</router-link
+              >立即預約</RouterLink
             >
           </div>
         </div>
@@ -128,18 +128,19 @@
       <div class="container h-100 pt-30">
         <div class="mb-20">
           <h2 class="fs-20 fw-bold border-bottom border-2 pb-15 border-dark mb-15">消息速覽</h2>
-          <ArticleCardComponent></ArticleCardComponent>
+          <ArticleCardComponent />
         </div>
         <div class="d-flex justify-content-center">
-          <router-link to="/articleList" class="btn btn-dark rounded-0 px-20"
-            >查看完整文章專欄</router-link
+          <RouterLink to="/articleList" class="btn btn-dark rounded-0 px-20"
+            >查看完整文章專欄</RouterLink
           >
         </div>
       </div>
     </section>
-    <FooterComponent></FooterComponent>
+    <FooterComponent />
   </main>
 </template>
+
 <script>
 import ProductCardComponent from '../../components/ProductCardComponent.vue'
 import FooterComponent from '../../components/FooterComponent.vue'

@@ -15,8 +15,8 @@
           <div>
             <p class="card-text d-flex justify-content-between align-items-center">
               <small class="text-muted">撰文日期 : {{ toDate(article.create_at) }}</small>
-              <router-link :to="`/article/${article.id}`" class="btn btn-outline-dark rounded-0"
-                >閱讀全文</router-link
+              <RouterLink :to="`/article/${article.id}`" class="btn btn-outline-dark rounded-0"
+                >閱讀全文</RouterLink
               >
             </p>
           </div>
@@ -25,6 +25,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import articleStore from '../stores/articleStore.js'
 import { mapActions, mapState } from 'pinia'

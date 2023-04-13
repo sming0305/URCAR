@@ -21,14 +21,15 @@
           </div>
         </div>
         <div class="d-grid gap-2">
-          <router-link :to="`/product/${product.id}`" class="btn btn-outline-dark rounded-0"
-            >立即預約</router-link
+          <RouterLink :to="`/product/${product.id}`" class="btn btn-outline-dark rounded-0"
+            >立即預約</RouterLink
           >
         </div>
       </div>
     </li>
   </ul>
 </template>
+
 <script>
 import productStore from '../stores/productStore'
 import { mapActions, mapState } from 'pinia'

@@ -135,11 +135,11 @@
                     <p class="mb-8" v-if="couponCodeError === false">
                       <small
                         >找不到優惠卷?，參考我們的
-                        <router-link
+                        <RouterLink
                           target="_blank"
                           class="text-blue"
                           to="/article/-NQYEpGrnCt0ky7Qq_9q"
-                          >優惠新訊</router-link
+                          >優惠新訊</RouterLink
                         ></small
                       >
                     </p>
@@ -162,18 +162,15 @@
               </tbody>
             </table>
             <div class="d-flex justify-content-end">
-              <router-link
+              <RouterLink
                 to="/productList"
                 class="btn btn-dark rounded-0"
                 :class="{ 'me-20': carts.length !== 0 }"
-                >預約其他車款</router-link
+                >預約其他車款</RouterLink
               >
-              <router-link
-                to="/createOrder"
-                class="btn btn-dark rounded-0"
-                v-if="carts.length !== 0"
+              <RouterLink to="/createOrder" class="btn btn-dark rounded-0" v-if="carts.length !== 0"
                 >填寫預約人資料
-              </router-link>
+              </RouterLink>
             </div>
           </div>
         </div>

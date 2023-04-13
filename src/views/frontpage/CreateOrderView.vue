@@ -64,7 +64,7 @@
               <VError name="預約人聯絡地址" class="invalid-feedback" style="height: 21px"></VError>
             </div>
             <label for="info" class="mb-5">備註 :</label>
-            <VField name="備註留言" v-slot="{ field, errors }" rules="max:1000">
+            <VField name="備註留言" v-slot="{ field, errors: fieldErrors }" rules="max:1000">
               <textarea
                 name="備註留言"
                 id="info"
@@ -73,10 +73,10 @@
                 class="form-control rounded-0 mb-5"
                 style="resize: none"
                 v-bind="field"
-                :class="{ 'is-invalid': errors.備註留言 }"
+                :class="{ 'is-invalid': fieldErrors.備註留言 }"
                 v-model="orderInfo.data.message"
               ></textarea>
-              <div v-if="errors[0]" class="text-danger fs-7 mb-10">{{ errors[0] }}</div>
+              <div v-if="fieldErrors[0]" class="text-danger fs-7 mb-10">{{ fieldErrors[0] }}</div>
             </VField>
             <div class="mb-5 form-check">
               <VField
@@ -87,8 +87,8 @@
                 rules="policyCheck"
               />
               <label class="form-check-label text-dark" for="policyCheck"
-                >已詳閱我們的<router-link to="/policyRule" class="text-blue" target="_blank"
-                  >”政策與保險”</router-link
+                >已詳閱我們的<RouterLink to="/policyRule" class="text-blue" target="_blank"
+                  >”政策與保險”</RouterLink
                 >條款，並同意所有相關規範。</label
               >
               <VError
@@ -98,8 +98,8 @@
               ></VError>
             </div>
             <div class="d-flex justify-content-between justify-content-sm-end">
-              <router-link to="/reserveList" class="btn btn-dark rounded-0 me-15 px-10"
-                >返回上一步</router-link
+              <RouterLink to="/reserveList" class="btn btn-dark rounded-0 me-15 px-10"
+                >返回上一步</RouterLink
               >
               <button class="btn btn-dark rounded-0" type="submit">建立訂單並進行付款</button>
             </div>
@@ -109,6 +109,7 @@
     </section>
   </main>
 </template>
+
 <script>
 import payStore from '../../stores/payStore.js'
 import { mapActions } from 'pinia'
