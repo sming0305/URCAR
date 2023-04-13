@@ -62,18 +62,16 @@ const router = createRouter({
           path: 'about',
           name: 'about',
           component: () => import('../views/frontpage/AboutView.vue')
+        },
+        {
+          path: '/:catchAll(.*)*',
+          name: 'error',
+          component: () => import('../views/frontpage/ErrorView.vue')
         }
       ]
     }
-    // {
-    //   path: '/about',
-    //   name: '',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('')
-    // }
-  ]
+  ],
+  linkActiveClass: 'active'
 })
 
 export default router

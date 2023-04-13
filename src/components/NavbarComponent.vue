@@ -54,3 +54,16 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss">
+.nav-link {
+  &:hover {
+    color: darken(#ffffff, 50%) !important;
+  }
+
+  &.active {
+    border-bottom: 2px solid #fff;
+    color: #fff !important;
+  }
+}
+</style>

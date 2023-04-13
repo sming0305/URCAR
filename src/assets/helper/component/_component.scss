@@ -71,6 +71,15 @@
   );
 }
 
+.fullPageLayout--9 {
+  @include fullPageLayout(
+    'https://tesla-cdn.thron.com/delivery/public/image/tesla/27d0055c-b0bf-476c-b3aa-ec59d314f871/bvlatuR/std/0x0/27d0055c-b0bf-476c-b3aa-ec59d314f871',
+    center,
+    center,
+    100%
+  );
+}
+
 .scroll-full-page {
   @include lg {
     height: 100vh;
@@ -79,6 +88,7 @@
   }
 }
 
-.textLineOverflow--4{
-    @include text-overflowLine(4);
-  }
+.textLineOverflow--4 {
+  @include text-overflowLine(4);
+}
+
