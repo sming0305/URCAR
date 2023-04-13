@@ -107,7 +107,7 @@
           <div class="flex-shrink-1">
             <img
               src="https://tesla-cdn.thron.com/delivery/public/image/tesla/649c549e-12b4-40c6-9294-7e996b8d3ccb/bvlatuR/std/4096x3071/Model-S-Specs-Hero-Desktop-LHD"
-              alt=""
+              alt="Model S"
               style="max-height: 550px"
             />
           </div>

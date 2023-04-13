@@ -16,7 +16,7 @@
                 <div class="d-flex align-items-center h-100">
                   <img
                     :src="productTemp.colorImageUrl"
-                    alt=""
+                    :alt="productTemp.product.title"
                     class="flex-shrink-1 d-block"
                     style="width: 100%; max-height: 405px"
                   />

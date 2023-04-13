@@ -9,7 +9,7 @@
               <div class="col-12 col-lg-6 mb-10 mb-lg-0">
                 <img
                   src="https://images.unsplash.com/photo-1549822701-09dcb3dd5ef2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                  alt=""
+                  alt="URCAR-tesla"
                   class="h-100"
                 />
               </div>

@@ -20,28 +20,28 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link class="nav-link text-white fs-9 fw-bold" to="/productList"
-                >方案選擇</router-link
+              <RouterLink class="nav-link text-white fs-9 fw-bold" to="/productList"
+                >方案選擇</RouterLink
               >
             </li>
             <li class="nav-item">
-              <router-link to="/reserveList" class="nav-link text-white fs-9 fw-bold"
-                >查看預約</router-link
+              <RouterLink to="/reserveList" class="nav-link text-white fs-9 fw-bold"
+                >查看預約</RouterLink
               >
             </li>
             <li class="nav-item">
-              <router-link to="/articleList" class="nav-link text-white fs-9 fw-bold"
-                >文章專欄</router-link
+              <RouterLink to="/articleList" class="nav-link text-white fs-9 fw-bold"
+                >文章專欄</RouterLink
               >
             </li>
             <li class="nav-item">
-              <router-link to="/policyRule" class="nav-link text-white fs-9 fw-bold"
-                >政策保險</router-link
+              <RouterLink to="/policyRule" class="nav-link text-white fs-9 fw-bold"
+                >政策保險</RouterLink
               >
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link text-white fs-9 fw-bold" href="#"
-                >關於URCAR</router-link
+              <RouterLink to="/about" class="nav-link text-white fs-9 fw-bold" href="#"
+                >關於URCAR</RouterLink
               >
             </li>
           </ul>
