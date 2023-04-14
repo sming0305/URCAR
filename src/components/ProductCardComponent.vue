@@ -1,14 +1,19 @@
 <template>
   <ul class="row row-cols-1 row-cols-lg-3 g-10">
     <li class="col" v-for="product in showProductList" :key="product.title">
-      <div class="card h-100 rounded-0 border-0 justify-content-between">
+      <RouterLink
+        :to="`/product/${product.id}`"
+        class="card h-100 rounded-0 border-0 justify-content-between text-dark"
+      >
         <div class="flex-grow-1 d-flex flex-column">
-          <img
-            :src="product.imageUrl"
-            class="card-img-top rounded-0"
-            :alt="product.title"
-            style="height: 220px"
-          />
+          <div class="overflow-hidden">
+            <img
+              :src="product.imageUrl"
+              class="card-img-top rounded-0 card__image"
+              :alt="product.title"
+              style="height: 220px"
+            />
+          </div>
           <div class="py-5 flex-grow-1 d-flex flex-column">
             <h5 class="card-title fw-bold">{{ product.title }}</h5>
             <p class="card-text mb-10">{{ product.description }}</p>
@@ -21,11 +26,9 @@
           </div>
         </div>
         <div class="d-grid gap-2">
-          <RouterLink :to="`/product/${product.id}`" class="btn btn-outline-dark rounded-0"
-            >立即預約</RouterLink
-          >
+          <button type="button" class="btn btn-outline-dark rounded-0">立即預約</button>
         </div>
-      </div>
+      </RouterLink>
     </li>
   </ul>
 </template>
@@ -46,3 +49,23 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.card {
+  .card__image {
+    transition: all 0.7s ease;
+  }
+
+  &:hover {
+    .card__image {
+      transform: scale(1.2);
+    }
+
+    .btn {
+      color: var(--bs-btn-hover-color);
+      background-color: var(--bs-btn-hover-bg);
+      border-color: var(--bs-btn-hover-border-color);
+    }
+  }
+}
+</style>
