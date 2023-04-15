@@ -9,11 +9,15 @@
   background-color: rgba(0, 0, 0, 0.85) !important;
 }
 .scroll-card {
-  scroll-snap-align: center;
+  scroll-snap-align: center !important;
 }
 
 .overflow-y-lg-scroll {
   @include lg {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
   }
+}
+
+.fit-content {
+  width: fit-content !important;
 }

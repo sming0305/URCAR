@@ -3,7 +3,9 @@
     <section class="py-30">
       <div class="container pt-30">
         <div class="mb-15">
-          <h2 class="fs-20 fw-bold border-bottom border-2 pb-15 border-dark mb-10">選擇預約時間</h2>
+          <h2 class="fs-20 fw-bold border-bottom border-2 pb-10 pb-sm-15 border-dark mb-10">
+            選擇預約時間
+          </h2>
           <div class="card mb-3 rounded-0 border-0 mb-15 border-bottom border-2 border-dark pb-10">
             <div class="row g-0">
               <div class="col-xl-6">
@@ -165,20 +167,30 @@
                         />
                       </div>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <p class="fs-7">
+                    <div class="d-flex justify-content-end align-items-end mb-4">
+                      <p class="fs-7 me-16 m-0">
                         原價 : <del>{{ productTemp.origin_price }}</del>
                       </p>
-                      <p class="fs-9 fw-bold">{{ productTemp.price }} / 天</p>
+                      <p class="fs-9 fw-bold m-0">{{ productTemp.price }} / 天</p>
                     </div>
                     <span class="text-danger" v-if="formError === true"
                       ><small>! 預約資訊請選擇完整後方可繼續預約。 !</small></span
                     >
-                    <div class="d-flex justify-content-end">
-                      <RouterLink to="/productList" class="btn btn-dark rounded-1 me-10"
-                        >重新選擇車款</RouterLink
-                      >
-                      <input type="submit" class="btn btn-dark rounded-1" value="建立預約" />
+                    <div class="d-sm-flex justify-content-between align-items-center">
+                      <p class="fs-7 mb-8 mb-sm-0">
+                        小幫手提醒您 : 租車前請詳閱<a
+                          href="#note"
+                          class="text-danger"
+                          @click.prevent="scrollToNote"
+                          >"注意事項"</a
+                        >
+                      </p>
+                      <div class="d-flex justify-content-end">
+                        <RouterLink to="/productList" class="btn btn-outline-dark rounded-1 me-10"
+                          >重新選擇車款</RouterLink
+                        >
+                        <input type="submit" class="btn btn-dark rounded-1" value="建立預約" />
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -187,13 +199,32 @@
           </div>
           <div>
             <h3 class="fw-bold">車輛簡介 :</h3>
-            <p class="mb-15">
+            <p class="mb-30 mb-sm-15">
               {{ productTemp.content }}
             </p>
-            <h3 class="fw-bold">規格 :</h3>
-            <ul>
-              <li v-for="info in productTemp.Specification" :key="info">{{ info }}</li>
-            </ul>
+            <div>
+              <div class="row">
+                <div class="col-12 col-lg-4">
+                  <h3 class="fw-bold">規格 :</h3>
+                  <ul>
+                    <li v-for="info in productTemp.Specification" :key="info">{{ info }}</li>
+                  </ul>
+                </div>
+                <div class="col-12 col-lg-1" id="note" style="height: 80px"></div>
+                <div class="col-12 col-lg-7">
+                  <h3 class="fw-bold">注意事項 :</h3>
+                  <ul>
+                    <li class="text-danger fs-7 mb-6">
+                      (1).目前同車款(不分車色)於同訂單內限租一輛，若有同車款同時多輛租賃需求，請結清訂單後再次租賃或選擇不同車款，謝謝您。
+                    </li>
+                    <li class="text-danger fs-7 mb-6">
+                      (2).旅程最短租賃期為一日(24小時)，跨日租賃不足24小時將以一日計費，請貴賓留意租賃日期。
+                    </li>
+                    <li class="text-danger fs-7">(3).預約資訊請務必填寫完整才可繼續進行預約。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -247,6 +278,14 @@ export default {
       } else {
         this.cartChcek(this.product, this.$router, this.$route.params.id, this.$route, this.$swal)
       }
+    },
+    scrollToNote() {
+      const note = document.getElementById('note')
+      note.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
     }
   },
   computed: {

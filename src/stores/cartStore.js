@@ -34,7 +34,7 @@ export default defineStore('cartStore', {
             if (check) {
               swal({
                 title: 'URCAR',
-                text: `目前同車款(不分車色)，同訂單限同時租賃一輛，請選擇其他車款或結清訂單後再次租賃，謝謝您。`,
+                text: `目前同車款(不分車色)，同訂單限同時租賃一輛，請查看注意事項，謝謝您。`,
                 showClass: {
                   popup: 'animate__animated animate__fadeIn'
                 },

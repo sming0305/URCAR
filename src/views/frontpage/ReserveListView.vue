@@ -7,14 +7,27 @@
             class="d-flex justify-content-between align-items-center border-bottom border-2 border-dark mb-10"
           >
             <h2 class="fs-20 fw-bold">預約清單</h2>
-            <button type="button" class="btn btn-danger mb-5 btn-sm" @click="deleteCart">
+            <button
+              type="button"
+              class="btn btn-danger mb-5 btn-sm"
+              @click="deleteCart"
+              v-if="carts?.length !== 0"
+            >
               刪除全部預約
             </button>
           </div>
           <div class="card mb-3 rounded-0 border-0 mb-15 border-bottom border-2 border-dark pb-10">
-            <h2 class="s-18 fw-bold text-center" v-if="carts?.length === 0">
-              目前沒有預約的車輛訂單。
+            <h2 class="fs-16 fw-bold text-center mb-12" v-if="carts?.length === 0">
+              目前沒有預約的訂單，快選擇心儀的車款出發吧。
             </h2>
+            <div class="d-flex justify-content-center">
+              <RouterLink
+                to="/productList"
+                class="btn btn-dark fit-content rounded-1 fs-9 px-10"
+                v-if="carts?.length === 0"
+                >前往車輛方案一覽</RouterLink
+              >
+            </div>
             <div
               class="row g-0 mb-5 border-bottom pb-5 border-dark"
               v-for="product in carts"
@@ -100,9 +113,6 @@
             </div>
           </div>
           <div>
-            <p class="text-danger" v-if="1 === 2">
-              提醒 : 您的訂單在同一時段內租用了 1 部以上的Tesla，請留意是否繼續執行。
-            </p>
             <h2 class="fs-20 fw-bold text-start">金額計算</h2>
             <table class="w-100 text-end mb-10">
               <thead>
@@ -166,6 +176,7 @@
                 to="/productList"
                 class="btn btn-dark rounded-0"
                 :class="{ 'me-20': carts.length !== 0 }"
+                v-if="carts?.length !== 0"
                 >預約其他車款</RouterLink
               >
               <RouterLink to="/createOrder" class="btn btn-dark rounded-0" v-if="carts.length !== 0"
