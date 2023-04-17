@@ -254,7 +254,7 @@ export default {
       const formCheck = Object.values(this.productTemp.rentInfo)
       const check = formCheck.find((info) => info === '')
 
-      const addressRegex = /^[\u4E00-\u9FA5]+[市縣區]+[\u4E00-\u9FA5]/
+      const addressRegex = /^[\u4E00-\u9FA5]+(?:市|縣)[\u4E00-\u9FA5]+區/
       const locationCheck = addressRegex.test(this.productTemp.rentInfo.location)
 
       if (check === '') {
