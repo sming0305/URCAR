@@ -11,7 +11,8 @@ export default defineStore('cartStore', {
     discountPrice: 0,
     final_total: 0,
     couponCodeError: false,
-    modal: {}
+    modal: {},
+    navBar: {}
   }),
   actions: {
     addProduct(rentInfo, router) {
@@ -200,6 +201,14 @@ export default defineStore('cartStore', {
     targetModal(target) {
       const modal = new Modal(target)
       this.modal = modal
+    },
+    targetNavbar(target) {
+      this.navBar = target
+    },
+    closeNavbar() {
+      if (window.innerWidth < 992) {
+        this.navBar.click()
+      }
     }
   },
   getters: {

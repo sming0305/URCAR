@@ -14,18 +14,25 @@
           aria-controls="navbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          ref="navbarControl"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse flex-grow-0" id="navbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <RouterLink class="nav-link text-white fs-9 fw-bold" to="/productList"
+              <RouterLink
+                class="nav-link text-white fs-9 fw-bold"
+                to="/productList"
+                @click="closeNavbar"
                 >方案選擇</RouterLink
               >
             </li>
             <li class="nav-item position-relative">
-              <RouterLink to="/reserveList" class="nav-link text-white fs-9 fw-bold"
+              <RouterLink
+                to="/reserveList"
+                class="nav-link text-white fs-9 fw-bold"
+                @click="closeNavbar"
                 >查看預約</RouterLink
               >
               <span
@@ -35,17 +42,27 @@
               >
             </li>
             <li class="nav-item">
-              <RouterLink to="/articleList" class="nav-link text-white fs-9 fw-bold"
+              <RouterLink
+                to="/articleList"
+                class="nav-link text-white fs-9 fw-bold"
+                @click="closeNavbar"
                 >文章專欄</RouterLink
               >
             </li>
             <li class="nav-item">
-              <RouterLink to="/policyRule" class="nav-link text-white fs-9 fw-bold"
+              <RouterLink
+                to="/policyRule"
+                class="nav-link text-white fs-9 fw-bold"
+                @click="closeNavbar"
                 >政策保險</RouterLink
               >
             </li>
             <li class="nav-item">
-              <RouterLink to="/about" class="nav-link text-white fs-9 fw-bold" href="#"
+              <RouterLink
+                to="/about"
+                class="nav-link text-white fs-9 fw-bold"
+                href="#"
+                @click="closeNavbar"
                 >關於URCAR</RouterLink
               >
             </li>
@@ -62,13 +79,14 @@ import { mapActions, mapState } from 'pinia'
 
 export default {
   methods: {
-    ...mapActions(cartStore, ['cartChcek'])
+    ...mapActions(cartStore, ['cartChcek', 'targetNavbar', 'closeNavbar'])
   },
   computed: {
     ...mapState(cartStore, ['cartQty'])
   },
   mounted() {
     this.cartChcek()
+    this.targetNavbar(this.$refs.navbarControl)
   }
 }
 </script>
