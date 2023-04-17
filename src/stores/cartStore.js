@@ -194,5 +194,14 @@ export default defineStore('cartStore', {
 
       return result
     }
+  },
+  getters: {
+    cartQty() {
+      if (this.carts.length === 0) {
+        return 0
+      } else {
+        return this.carts.length
+      }
+    }
   }
 })

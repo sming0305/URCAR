@@ -173,6 +173,9 @@
                           placeholder="請輸入您的取車地點地址"
                           v-model="productTemp.rentInfo.location"
                         />
+                        <span class="text-danger" v-if="locationError === true"
+                          ><small>請輸入正確的台灣(中文)地址格式。</small></span
+                        >
                       </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
@@ -235,7 +238,8 @@ export default {
         end: null
       },
       isDateRepeat: false,
-      formError: false
+      formError: false,
+      locationError: false
     }
   },
   methods: {
@@ -246,11 +250,18 @@ export default {
     },
     checkSend() {
       this.formError = false
+      this.locationError = false
       const formCheck = Object.values(this.productTemp.rentInfo)
       const check = formCheck.find((info) => info === '')
+
+      const addressRegex = /^[\u4E00-\u9FA5]+[市縣區]+[\u4E00-\u9FA5]/
+      const locationCheck = addressRegex.test(this.productTemp.rentInfo.location)
+
       if (check === '') {
         this.formError = true
         return
+      } else if (!locationCheck) {
+        this.locationError = true
       } else {
         this.editProduct(
           this.productTemp.rentInfo,
@@ -293,7 +304,6 @@ export default {
     modalProduct() {
       this.productTemp = JSON.parse(JSON.stringify(this.modalProduct))
     },
-
     parseStartDate() {
       this.isDateRepeat = false
       this.productTemp.rentInfo.startDate = this.parseStartDate

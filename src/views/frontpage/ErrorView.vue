@@ -8,7 +8,9 @@
             <p class="lh-lg fs-10">
               網頁路徑錯誤 ， 此頁面並不存在<br />請點擊下方按鈕返回首頁，謝謝您!
             </p>
-            <RouterLink to="/" class="btn btn-outline-light">返回首頁</RouterLink>
+            <a href="#" class="btn btn-outline-light" @click.prevent="this.$router.push('/')"
+              >返回首頁</a
+            >
           </div>
         </div>
       </div>

@@ -24,9 +24,14 @@
                 >方案選擇</RouterLink
               >
             </li>
-            <li class="nav-item">
+            <li class="nav-item position-relative">
               <RouterLink to="/reserveList" class="nav-link text-white fs-9 fw-bold"
                 >查看預約</RouterLink
+              >
+              <span
+                class="text-white position-absolute cartQty__tag text-center fs-7"
+                v-if="cartQty !== 0"
+                >{{ cartQty }}</span
               >
             </li>
             <li class="nav-item">
@@ -52,7 +57,20 @@
 </template>
 
 <script>
-export default {}
+import cartStore from '@/stores/cartStore.js'
+import { mapActions, mapState } from 'pinia'
+
+export default {
+  methods: {
+    ...mapActions(cartStore, ['cartChcek'])
+  },
+  computed: {
+    ...mapState(cartStore, ['cartQty'])
+  },
+  mounted() {
+    this.cartChcek()
+  }
+}
 </script>
 
 <style lang="scss">
@@ -65,5 +83,15 @@ export default {}
     border-bottom: 2px solid #fff;
     color: #fff !important;
   }
+}
+
+.cartQty__tag {
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: -6px;
+  background: red;
+  border-radius: 50%;
+  z-index: -6;
 }
 </style>

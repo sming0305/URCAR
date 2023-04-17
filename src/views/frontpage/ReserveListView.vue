@@ -211,7 +211,7 @@ export default {
     ...mapState(cartStore, ['carts', 'final_total', 'discountPrice', 'couponCodeError'])
   },
   mounted() {
-    this.cartChcek()
+    this.cartChcek(null, null, null, this.$route.name)
     this.checkCoupon()
   }
 }

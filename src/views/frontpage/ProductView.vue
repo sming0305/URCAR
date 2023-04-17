@@ -160,11 +160,14 @@
                       <div class="col-8 col-sm-9 col-md-10">
                         <input
                           type="text"
-                          class="form-control"
+                          class="form-control mb-4"
                           id="location"
                           placeholder="請輸入您的取車地點地址"
                           v-model="product.data.rentInfo.location"
                         />
+                        <span class="text-danger" v-if="locationError === true"
+                          ><small>請輸入正確的台灣(中文)地址格式。</small></span
+                        >
                       </div>
                     </div>
                     <div class="d-flex justify-content-end align-items-end mb-4">
@@ -246,6 +249,7 @@ export default {
       },
       isDateRepeat: false,
       formError: false,
+      locationError: false,
       product: {
         data: {
           product_id: this.$route.params.id,
@@ -270,11 +274,18 @@ export default {
     },
     checkSend() {
       this.formError = false
+      this.locationError = false
       const formCheck = Object.values(this.product.data.rentInfo)
       const check = formCheck.find((info) => info === '')
+
+      const addressRegex = /^[\u4E00-\u9FA5]+[市縣區]+[\u4E00-\u9FA5]/
+      const locationCheck = addressRegex.test(this.product.data.rentInfo.location)
+
       if (check === '') {
         this.formError = true
         return
+      } else if (!locationCheck) {
+        this.locationError = true
       } else {
         this.cartChcek(this.product, this.$router, this.$route.params.id, this.$route, this.$swal)
       }
