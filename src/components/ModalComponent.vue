@@ -1,5 +1,12 @@
 <template>
-  <div class="modal fade" tabindex="-1" aria-hidden="true" ref="modal">
+  <div
+    class="modal fade"
+    tabindex="-1"
+    aria-hidden="true"
+    ref="modal"
+    id="exampleModal"
+    aria-labelledby="exampleModalLabel"
+  >
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content container">
         <div>

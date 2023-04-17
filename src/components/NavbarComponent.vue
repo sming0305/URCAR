@@ -10,14 +10,14 @@
           class="navbar-toggler border-0 shadow-none"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <div class="collapse navbar-collapse flex-grow-0" id="navbar">
           <ul class="navbar-nav">
             <li class="nav-item">
               <RouterLink class="nav-link text-white fs-9 fw-bold" to="/productList"
@@ -88,10 +88,17 @@ export default {
 .cartQty__tag {
   width: 20px;
   height: 20px;
-  top: 0;
-  right: -6px;
+  top: 25%;
+  right: 10px;
   background: red;
   border-radius: 50%;
   z-index: -6;
+
+  @media (min-width: 992px) {
+    & {
+      top: 0;
+      right: -6px;
+    }
+  }
 }
 </style>

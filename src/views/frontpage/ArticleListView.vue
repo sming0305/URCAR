@@ -9,23 +9,23 @@
           <div class="col-12 col-xl-2">
             <div class="p-8 bg-gray mb-10 sticky-top top-80">
               <h3 class="fw-bold mb-12">文章分類</h3>
-              <ul class="d-flex d-xl-block">
-                <li class="mb-0 mb-sm-10 me-10">
+              <ul class="d-flex d-xl-block justify-content-between">
+                <li class="mb-0 mb-sm-10 me-sm-10 flex-shrink-0">
                   <a href="#" class="link-secondary" @click.prevent="switchCategory('all')"
                     >所有文章</a
                   >
                 </li>
-                <li class="mb-0 mb-sm-10 me-10">
+                <li class="mb-0 mb-sm-10 me-sm-10 flex-shrink-0">
                   <a href="#" class="link-secondary" @click.prevent="switchCategory('車輛介紹')"
                     >車輛介紹</a
                   >
                 </li>
-                <li class="mb-0 mb-sm-10 me-10">
+                <li class="mb-0 mb-sm-10 me-sm-10 flex-shrink-0">
                   <a href="#" class="link-secondary" @click.prevent="switchCategory('優惠新訊')"
                     >優惠新訊</a
                   >
                 </li>
-                <li class="mb-0 mb-sm-10">
+                <li class="mb-0 mb-sm-10 flex-shrink-0">
                   <a href="#" class="link-secondary" @click.prevent="switchCategory('旅程推薦')"
                     >旅程推薦</a
                   >

@@ -138,7 +138,7 @@
                 <tr class="border-bottom border-dark border-2">
                   <td colspan="4">
                     <p class="text-danger mb-8" v-if="couponCodeError === true">
-                      <small>優惠卷折扣碼不存在，請留意字母大小寫並重新輸入。</small>
+                      <small>優惠卷折扣碼不存在或已過期，請留意字母大小寫並重新輸入。</small>
                     </p>
                     <p class="mb-8" v-if="couponCodeError === false">
                       <small

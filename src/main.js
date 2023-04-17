@@ -15,7 +15,7 @@ import VueSweetalert2 from 'vue-sweetalert2'
 
 import 'v-calendar/style.css'
 import './assets/all.scss'
-import 'bootstrap/dist/js/bootstrap.js'
+// import 'bootstrap/dist/js/bootstrap.js'
 import 'animate.css'
 
 const app = createApp(App)
