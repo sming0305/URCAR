@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
+  <div class="modal fade" tabindex="-1" aria-hidden="true" ref="modal">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content container">
         <div>
@@ -189,7 +183,7 @@
                       <button
                         type="button"
                         class="btn btn-dark rounded-1 me-10"
-                        data-bs-dismiss="modal"
+                        @click="this.modal.hide()"
                       >
                         取消修改
                       </button>
@@ -197,7 +191,6 @@
                         type="submit"
                         class="btn btn-dark rounded-1"
                         value="確認修改"
-                        data-bs-dismiss="modal"
                         @click.prevent="checkSend()"
                       />
                     </div>
@@ -243,7 +236,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(cartStore, ['editProduct']),
+    ...mapActions(cartStore, ['editProduct', 'targetModal']),
     switchImage(info) {
       this.productTemp.colorImageUrl = info.imageUrl
       this.productTemp.rentInfo.carColor = info.color
@@ -269,11 +262,12 @@ export default {
           this.productTemp.id,
           this.productTemp.product_id
         )
+        this.modal.hide()
       }
     }
   },
   computed: {
-    ...mapState(cartStore, ['modalProduct']),
+    ...mapState(cartStore, ['modalProduct', 'modal']),
     disabledDates() {
       const now = new Date()
       const result = [{ start: null, end: now }]
@@ -336,6 +330,9 @@ export default {
 
       this.productTemp.qty = diffDays
     }
+  },
+  mounted() {
+    this.targetModal(this.$refs.modal)
   }
 }
 </script>

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import { Modal } from 'bootstrap'
 
 const { VITE_API_PATH, VITE_API_URL } = import.meta.env
 
@@ -9,7 +10,8 @@ export default defineStore('cartStore', {
     carts: [],
     discountPrice: 0,
     final_total: 0,
-    couponCodeError: false
+    couponCodeError: false,
+    modal: {}
   }),
   actions: {
     addProduct(rentInfo, router) {
@@ -82,6 +84,7 @@ export default defineStore('cartStore', {
     },
     openTargetProduct(product) {
       this.modalProduct = product
+      this.modal.show()
     },
     editProduct(rentInfo, qty, cartId, product_id) {
       const payload = {
@@ -193,6 +196,10 @@ export default defineStore('cartStore', {
       })
 
       return result
+    },
+    targetModal(target) {
+      const modal = new Modal(target)
+      this.modal = modal
     }
   },
   getters: {

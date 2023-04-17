@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import cartStore from './cartStore.js'
 import axios from 'axios'
 
 const { VITE_API_PATH, VITE_API_URL } = import.meta.env
@@ -19,6 +20,9 @@ export default defineStore('payStore', {
           this.orderId = res.data.orderId
           this.getOrder(router)
           form.resetForm()
+          const { cartChcek } = cartStore()
+          cartChcek()
+
           router.push('/pay')
         })
         .catch(() => {
@@ -76,6 +80,5 @@ export default defineStore('payStore', {
           .then(() => {})
       }
     }
-  },
-  getters: {}
+  }
 })

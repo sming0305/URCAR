@@ -100,13 +100,11 @@
                     <button
                       type="button"
                       class="btn btn-dark rounded-1 btn-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
                       @click="openTargetProduct(product)"
                     >
                       修改內容
                     </button>
-                    <ModalComponent ref="modal"></ModalComponent>
+                    <ModalComponent></ModalComponent>
                   </div>
                 </div>
               </div>
