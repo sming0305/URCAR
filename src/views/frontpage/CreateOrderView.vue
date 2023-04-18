@@ -1,7 +1,7 @@
 <template>
   <main>
-    <section class="pt-30 pb-15">
-      <div class="container pt-30">
+    <section class="pb-30 pb-15">
+      <div class="container">
         <div class="mb-15">
           <div class="border-bottom border-2 border-dark mb-20">
             <h2 class="fs-20 fw-bold">填寫預約人資料</h2>
@@ -135,6 +135,7 @@
 
 <script>
 import payStore from '@/stores/payStore.js'
+import cartStore from '@/stores/cartStore'
 import { mapActions } from 'pinia'
 import { Field, Form, ErrorMessage, configure, defineRule } from 'vee-validate'
 import AllRules from '@vee-validate/rules'
@@ -201,7 +202,11 @@ export default {
     VError: ErrorMessage
   },
   methods: {
-    ...mapActions(payStore, ['sendOrder'])
+    ...mapActions(payStore, ['sendOrder']),
+    ...mapActions(cartStore, ['currentRoute'])
+  },
+  mounted() {
+    this.currentRoute(this.$route.name)
   }
 }
 </script>

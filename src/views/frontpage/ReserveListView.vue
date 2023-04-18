@@ -1,7 +1,7 @@
 <template>
   <main>
-    <section class="pt-30 pb-15">
-      <div class="container pt-30">
+    <section class="pb-30 pb-15">
+      <div class="container">
         <div class="mb-15">
           <div
             class="d-flex justify-content-between align-items-center border-bottom border-2 border-dark mb-10"
@@ -202,7 +202,8 @@ export default {
       'deleteTargetProduct',
       'addCoupon',
       'checkCoupon',
-      'openTargetProduct'
+      'openTargetProduct',
+      'currentRoute'
     ])
   },
   computed: {
@@ -211,6 +212,7 @@ export default {
   mounted() {
     this.cartChcek(null, null, null, this.$route.name)
     this.checkCoupon()
+    this.currentRoute(this.$route.name)
   }
 }
 </script>

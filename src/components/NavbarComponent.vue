@@ -5,7 +5,9 @@
       :class="{ 'overflow-y-lg-scroll': this.$route.name === 'home' }"
     >
       <div class="container-fluid justify-content-between">
-        <h1 class="m-0"><RouterLink to="/" class="fw-bold">URCAR</RouterLink></h1>
+        <h1 class="m-0">
+          <RouterLink to="/" class="fw-bold" @click="closeNavbar">URCAR</RouterLink>
+        </h1>
         <button
           class="navbar-toggler border-0 shadow-none"
           type="button"

@@ -13,10 +13,10 @@ import VueAxios from 'vue-axios'
 import VCalendar from 'v-calendar'
 import VueSweetalert2 from 'vue-sweetalert2'
 
+import 'vue-step-progress/dist/main.css'
 import 'v-calendar/style.css'
-import './assets/all.scss'
-// import 'bootstrap/dist/js/bootstrap.js'
 import 'animate.css'
+import './assets/all.scss'
 
 const app = createApp(App)
 app.use(createPinia())

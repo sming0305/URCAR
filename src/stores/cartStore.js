@@ -12,7 +12,8 @@ export default defineStore('cartStore', {
     final_total: 0,
     couponCodeError: false,
     modal: {},
-    navBar: {}
+    navBar: {},
+    routeName: ''
   }),
   actions: {
     addProduct(rentInfo, router) {
@@ -209,6 +210,10 @@ export default defineStore('cartStore', {
       if (window.innerWidth < 992) {
         this.navBar.click()
       }
+    },
+    currentRoute(route) {
+      console.log(route)
+      this.routeName = route
     }
   },
   getters: {
@@ -217,6 +222,17 @@ export default defineStore('cartStore', {
         return 0
       } else {
         return this.carts.length
+      }
+    },
+    step() {
+      if (this.routeName === 'singleProduct') {
+        return 0
+      } else if (this.routeName === 'reserve') {
+        return 1
+      } else if (this.routeName === 'createorder') {
+        return 2
+      } else if (this.routeName === 'pay') {
+        return 3
       }
     }
   }

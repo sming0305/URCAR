@@ -1,11 +1,9 @@
 <template>
   <main>
-    <section class="py-30">
-      <div class="container pt-30">
+    <section class="pb-30">
+      <div class="container">
         <div class="mb-15">
-          <h2 class="fs-20 fw-bold border-bottom border-2 pb-10 pb-sm-15 border-dark mb-10">
-            選擇預約時間
-          </h2>
+          <h2 class="fs-20 fw-bold border-bottom border-2 pb-10 border-dark mb-10">選擇預約時間</h2>
           <div class="card mb-3 rounded-0 border-0 mb-15 border-bottom border-2 border-dark pb-10">
             <div class="row g-0">
               <div class="col-xl-6">
@@ -268,7 +266,7 @@ export default {
   },
   methods: {
     ...mapActions(productStore, ['getTargetProduct']),
-    ...mapActions(cartStore, ['addProduct', 'getCart', 'cartChcek']),
+    ...mapActions(cartStore, ['addProduct', 'getCart', 'cartChcek', 'currentRoute']),
     switchImage(info) {
       this.carImageUrl = info.imageUrl
     },
@@ -373,6 +371,7 @@ export default {
   mounted() {
     this.carImageUrl = ''
     this.getTargetProduct(this.$route.params.id)
+    this.currentRoute(this.$route.name)
   }
 }
 </script>

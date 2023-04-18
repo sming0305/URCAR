@@ -1,7 +1,7 @@
 <template>
   <main>
-    <section class="pt-30 pb-15">
-      <div class="container pt-30">
+    <section class="pb-30 pb-15">
+      <div class="container">
         <div class="mb-15">
           <div class="border-bottom border-2 border-dark mb-20">
             <h2 class="fs-20 fw-bold">付款</h2>
@@ -139,6 +139,7 @@
 
 <script>
 import payStore from '@/stores/payStore.js'
+import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
 
 export default {
@@ -151,13 +152,15 @@ export default {
     }
   },
   methods: {
-    ...mapActions(payStore, ['getOrder', 'focusNext', 'pay'])
+    ...mapActions(payStore, ['getOrder', 'focusNext', 'pay']),
+    ...mapActions(cartStore, ['currentRoute'])
   },
   computed: {
     ...mapState(payStore, ['order', 'payError'])
   },
   mounted() {
     this.getOrder(this.$router, this.$route)
+    this.currentRoute(this.$route.name)
   }
 }
 </script>
