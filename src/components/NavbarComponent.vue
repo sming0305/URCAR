@@ -6,7 +6,16 @@
     >
       <div class="container-fluid justify-content-between">
         <h1 class="m-0">
-          <RouterLink to="/" class="fw-bold" @click="closeNavbar">URCAR</RouterLink>
+          <RouterLink
+            to="/"
+            class="fw-bold"
+            @click="
+              (e) => {
+                closeNavbar(e)
+              }
+            "
+            >URCAR</RouterLink
+          >
         </h1>
         <button
           class="navbar-toggler border-0 shadow-none"

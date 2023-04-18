@@ -4,8 +4,8 @@
       active-color="black"
       :steps="mySteps"
       :current-step="step"
-      line-thickness="5"
-      passive-thickness="4"
+      :line-thickness="5"
+      :passive-thickness="4"
       icon-class="fas fa-check"
     ></StepProgress>
   </div>
@@ -27,9 +27,6 @@ export default {
   },
   computed: {
     ...mapState(cartStore, ['step'])
-  },
-  mounted() {
-    console.log(this.step)
   }
 }
 </script>

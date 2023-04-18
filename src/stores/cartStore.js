@@ -206,13 +206,23 @@ export default defineStore('cartStore', {
     targetNavbar(target) {
       this.navBar = target
     },
-    closeNavbar() {
-      if (window.innerWidth < 992) {
-        this.navBar.click()
+    closeNavbar(e) {
+      const target = e.target.textContent
+
+      if (target === 'URCAR') {
+        const childElement = e.target.parentElement.parentElement.querySelector('.navbar-toggler ')
+        const detectionIsOn = childElement.getAttribute('aria-expanded')
+
+        if (window.innerWidth < 992 && detectionIsOn === 'true') {
+          this.navBar.click()
+        }
+      } else {
+        if (window.innerWidth < 992) {
+          this.navBar.click()
+        }
       }
     },
     currentRoute(route) {
-      console.log(route)
       this.routeName = route
     }
   },

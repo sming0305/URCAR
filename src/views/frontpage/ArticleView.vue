@@ -33,7 +33,7 @@
             <div class="sticky-top top-80">
               <h3 class="mb-10">相關文章</h3>
               <ul>
-                <li v-for="article in showArticleList" :key="article.title">
+                <li v-for="article in showArticleList" :key="article.id">
                   <RouterLink
                     :to="`/article/${article.id}`"
                     class="d-flex mb-10 border-bottom pb-10 justify-content-between link-dark"
@@ -45,7 +45,7 @@
                     <img
                       :src="article.image"
                       :alt="article.title"
-                      style="height: 100px; width: 100px"
+                      style="height: 100px; min-width: 100px; max-width: 100px"
                     />
                   </RouterLink>
                 </li>

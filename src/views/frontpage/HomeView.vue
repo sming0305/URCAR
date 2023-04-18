@@ -9,7 +9,7 @@
       }"
       :navigation="false"
       :autoplay="{
-        delay: 3500,
+        delay: 4500,
         disableOnInteraction: false
       }"
       :speed="2000"
@@ -31,9 +31,16 @@
             class="d-flex align-items-lg-center justify-content-center justify-content-sm-start h-100 pt-30"
           >
             <div class="text-white mt-30 text-center text-sm-start">
-              <p class="fw-bold fs-18">"我們提供彈性且齊全的方案"</p>
-              <p class="fs-12">讓您輕鬆享受駕駛特斯拉電動車，包含:</p>
-              <p class="fs-12 ms-10">Modal 3 ， Modal X ， Modal Y <br />... 等車款。</p>
+              <div class="mb-8">
+                <p class="fw-bold fs-18">"我們提供彈性且齊全的方案"</p>
+                <p class="fs-12">讓您輕鬆享受駕駛特斯拉電動車，包含:</p>
+                <p class="fs-12 ms-10">Modal 3 ， Modal X ， Modal Y <br />... 等車款。</p>
+              </div>
+              <div class="d-flex justify-content-center justify-content-sm-end">
+                <RouterLink to="/productList" class="btn btn-outline-light rounded-0"
+                  >查看完整方案</RouterLink
+                >
+              </div>
             </div>
           </div>
         </div></swiper-slide
@@ -42,14 +49,23 @@
         ><div class="container h-100">
           <div class="d-flex align-items-end justify-content-center justify-content-sm-start h-100">
             <div
-              class="text-white text-center text-sm-start p-8 p-sm-25 bg-translucent-75 mb-15 mb-md-30 rounded-5"
+              class="text-white text-center text-sm-start p-8 p-sm-25 bg-translucent-75 mb-35 rounded-5"
             >
-              <p class="fw-bold fs-25">"只要負責體驗"</p>
-              <p class="fw-bold fs-10">
-                URCAR提供到府送車，以及服務範圍內彈性<br
-                  class="d-none d-md-block"
-                />自選定點還車，讓您擁有最美好的旅程。
-              </p>
+              <div class="mb-8">
+                <p class="fw-bold fs-25">"只要負責體驗"</p>
+                <p class="fw-bold fs-10">
+                  URCAR提供到府送車，以及服務範圍內彈性<br
+                    class="d-none d-md-block"
+                  />自選定點還車，讓您擁有最美好的旅程。
+                </p>
+              </div>
+              <div class="d-flex justify-content-center justify-content-sm-end">
+                <RouterLink
+                  to="/article/-NTIgAlNc062Dk8g9Hlq"
+                  class="btn btn-outline-light rounded-0"
+                  >服務介紹</RouterLink
+                >
+              </div>
             </div>
           </div>
         </div></swiper-slide
@@ -58,14 +74,23 @@
         ><div class="container h-100">
           <div class="d-flex align-items-end justify-content-center justify-content-sm-end h-100">
             <div
-              class="text-white text-center text-sm-start p-8 p-sm-25 bg-translucent-75 mb-15 mb-md-30 rounded-3"
+              class="text-white text-center text-sm-start p-8 p-sm-25 bg-translucent-75 mb-35 rounded-3"
             >
-              <p class="fw-bold fs-25">"安心使用"</p>
-              <p class="fw-bold fs-10">
-                對於車況您無需煩惱，<br
-                  class="d-none d-md-block"
-                />URCAR團隊將確保交付到您手中的車輛安全無虞。
-              </p>
+              <div class="mb-8">
+                <p class="fw-bold fs-25">"安心使用"</p>
+                <p class="fw-bold fs-10">
+                  對於車況您無需煩惱，<br
+                    class="d-none d-md-block"
+                  />URCAR團隊將確保交付到您手中的車輛安全無虞。
+                </p>
+              </div>
+              <div class="d-flex justify-content-center justify-content-sm-end">
+                <RouterLink
+                  to="/article/-NTIflw-4rLtIY3UOZN6"
+                  class="btn btn-outline-light rounded-0"
+                  >服務介紹</RouterLink
+                >
+              </div>
             </div>
           </div>
         </div></swiper-slide
@@ -74,12 +99,21 @@
         ><div class="container h-100">
           <div class="d-flex align-items-end justify-content-center justify-content-sm-end h-100">
             <div
-              class="text-white text-center text-sm-start p-6 p-sm-20 bg-translucent-75 mb-15 mb-md-30 rounded-3"
+              class="text-white text-center text-sm-start p-6 p-sm-20 bg-translucent-75 mb-35 rounded-3"
             >
-              <p class="fw-bold fs-18">"不只安全，<br />更讓您有賓至如歸的感受"</p>
-              <p class="fw-bold fs-10">
-                每次車輛繳回後都會由URCAR團隊進行清潔整備，<br />並隨車附贈Tesla雨傘.礦泉水
-              </p>
+              <div class="mb-8">
+                <p class="fw-bold fs-18">"不只安全，<br />更讓您有賓至如歸的感受"</p>
+                <p class="fw-bold fs-10">
+                  每次車輛繳回後都會由URCAR團隊進行清潔整備，<br />並隨車附贈Tesla雨傘.礦泉水
+                </p>
+              </div>
+              <div class="d-flex justify-content-center justify-content-sm-end">
+                <RouterLink
+                  to="/article/-NTIfVbQuikz6hI1xqF_"
+                  class="btn btn-outline-light rounded-0"
+                  >服務介紹</RouterLink
+                >
+              </div>
             </div>
           </div>
         </div></swiper-slide
@@ -178,5 +212,9 @@ export default {
   --swiper-pagination-bullet-size: 16px;
   --swiper-pagination-bottom: 40px;
   --swiper-pagination-bullet-inactive-opacity: 0.4;
+}
+
+.mb-35 {
+  margin-bottom: 70px;
 }
 </style>
