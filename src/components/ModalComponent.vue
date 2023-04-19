@@ -7,7 +7,7 @@
     id="exampleModal"
     aria-labelledby="exampleModalLabel"
   >
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content container">
         <div>
           <h2 class="fs-15 fw-bold border-bottom border-2 p-10 border-dark">調整預約內容</h2>
