@@ -8,7 +8,16 @@
       this.$route.name === 'pay'
     "
   ></ProgressTrackerComponent>
-  <section @scroll="(e) => handleScroll(e)" :class="{ 'overflow-y': this.$route.name !== 'home' }">
+  <section
+    @scroll="(e) => handleScroll(e)"
+    class="flex-grow-1"
+    :class="{
+      'overflow-y':
+        this.$route.name !== 'home' &&
+        this.$route.name !== 'paysuccess' &&
+        this.$route.name !== 'error'
+    }"
+  >
     <RouterView @scroll="(e) => handleScroll(e)"></RouterView>
     <FooterComponent v-if="this.$route.name !== 'home'"></FooterComponent>
   </section>

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="pt-30 pb-15 fullPageLayout--6 h-100">
+    <section class="pt-30 pb-15 fullPageLayout--6">
       <div class="container pt-30 h-100">
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="text-center p-20 bg-translucent-75 text-white rounded-2">
