@@ -11,7 +11,7 @@ export default defineStore('homePageStore', {
     productPagination: {},
     currentRoute: '',
     category: 'all',
-    test: 0
+    offsetTop: 0
   }),
   actions: {
     getProduct(router, id) {
@@ -74,6 +74,31 @@ export default defineStore('homePageStore', {
         result[index].origin_price = formattedNumberOrigin_price
       })
       return result
+    },
+    handleScroll(e) {
+      if (e === window) {
+        console.log(window.scrollY)
+        this.offsetTop = window.scrollY
+      } else {
+        this.offsetTop = e.target.scrollTop
+      }
+    },
+    goTop(route) {
+      if (route.name === 'home') {
+        const banner = document.getElementsByClassName('scroll-card')
+        banner[0].scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      } else if (route.name !== 'home') {
+        const mainTop = document.getElementsByTagName('main')
+        mainTop[0].scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      }
     }
   },
   getters: {

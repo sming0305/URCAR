@@ -4,8 +4,8 @@
       active-color="black"
       :steps="mySteps"
       :current-step="step"
-      :line-thickness="5"
-      :passive-thickness="4"
+      :line-thickness="4"
+      :passive-thickness="2"
       icon-class="fas fa-check"
     ></StepProgress>
   </div>
@@ -37,12 +37,12 @@ export default {
 }
 
 .step-progress__bar {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .step-progress__step {
   & span {
-    font-size: 24px;
+    font-size: 20px;
   }
   &-label {
     font-size: 16px;

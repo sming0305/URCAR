@@ -81,9 +81,9 @@
 }
 
 .scroll-full-page {
+  height: 100vh;
+  overflow-y: scroll;
   @include lg {
-    height: 100vh;
-    overflow-y: scroll;
     scroll-snap-type: y mandatory;
   }
 }
@@ -91,4 +91,3 @@
 .textLineOverflow--4 {
   @include text-overflowLine(4);
 }
-
