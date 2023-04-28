@@ -51,11 +51,13 @@
       </div>
     </section>
   </main>
+  <LoadingComponent></LoadingComponent>
 </template>
 
 <script>
 import PaginationComponent from '@/components/PaginationComponent.vue'
 import ArticleCardComponent from '@/components/ArticleCardComponent.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 
 import articleStore from '@/stores/articleStore.js'
 import { mapActions, mapState } from 'pinia'
@@ -63,7 +65,8 @@ import { mapActions, mapState } from 'pinia'
 export default {
   components: {
     PaginationComponent,
-    ArticleCardComponent
+    ArticleCardComponent,
+    LoadingComponent
   },
   methods: {
     ...mapActions(articleStore, ['switchCategory'])

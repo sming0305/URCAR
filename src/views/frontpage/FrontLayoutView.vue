@@ -12,6 +12,7 @@
   <RouterView></RouterView>
   <FooterComponent></FooterComponent>
   <ScrollTopComponent />
+  <LoadingComponent></LoadingComponent>
 </template>
 
 <script>
@@ -20,6 +21,7 @@ import NavbarComponent from '@/components/NavbarComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import ProgressTrackerComponent from '@/components/ProgressTrackerComponent.vue'
 import ScrollTopComponent from '@/components/ScrollTopComponent.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import { mapActions } from 'pinia'
 
 export default {
@@ -27,7 +29,8 @@ export default {
     NavbarComponent,
     ProgressTrackerComponent,
     FooterComponent,
-    ScrollTopComponent
+    ScrollTopComponent,
+    LoadingComponent
   },
   methods: {
     ...mapActions(productStore, ['handleScroll', 'goTop'])

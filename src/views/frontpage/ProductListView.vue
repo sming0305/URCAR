@@ -54,6 +54,7 @@
               >Model S</label
             >
           </div>
+          <LoadingComponent :loading-process1="getAllProduct"></LoadingComponent>
           <ProductCardComponent class="mb-20"></ProductCardComponent>
           <PaginationComponent v-if="category === 'all'"></PaginationComponent>
         </div>
@@ -65,13 +66,20 @@
 <script>
 import ProductCardComponent from '@/components/ProductCardComponent.vue'
 import PaginationComponent from '@/components/PaginationComponent.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import productStore from '@/stores/productStore.js'
 import { mapActions, mapState } from 'pinia'
 
 export default {
+  data() {
+    return {
+      loading: true
+    }
+  },
   components: {
     ProductCardComponent,
-    PaginationComponent
+    PaginationComponent,
+    LoadingComponent
   },
   methods: {
     ...mapActions(productStore, ['getProduct', 'switchCategory', 'getAllProduct'])
@@ -81,7 +89,6 @@ export default {
   },
   mounted() {
     this.getProduct(this.$route.name)
-    this.getAllProduct()
   }
 }
 </script>
