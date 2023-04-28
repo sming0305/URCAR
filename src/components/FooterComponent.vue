@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-20 px-10 bg-black scroll-card">
+  <footer class="py-20 px-10 bg-black">
     <div class="d-md-flex justify-content-around align-items-start">
       <div class="mb-15 mb-md-0">
         <h3 class="text-white fw-bold">總部資訊</h3>

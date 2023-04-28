@@ -7,21 +7,11 @@
       this.$route.name === 'createorder' ||
       this.$route.name === 'pay'
     "
-  ></ProgressTrackerComponent>
-  <section
-    @scroll="(e) => handleScroll(e)"
-    class="flex-grow-1"
-    :class="{
-      'overflow-y':
-        this.$route.name !== 'home' &&
-        this.$route.name !== 'paysuccess' &&
-        this.$route.name !== 'error'
-    }"
   >
-    <RouterView @scroll="(e) => handleScroll(e)"></RouterView>
-    <FooterComponent v-if="this.$route.name !== 'home'"></FooterComponent>
-  </section>
-  <ScrollTopComponent></ScrollTopComponent>
+  </ProgressTrackerComponent>
+  <RouterView></RouterView>
+  <FooterComponent></FooterComponent>
+  <ScrollTopComponent />
 </template>
 
 <script>
@@ -29,18 +19,24 @@ import productStore from '@/stores/productStore'
 import NavbarComponent from '@/components/NavbarComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import ProgressTrackerComponent from '@/components/ProgressTrackerComponent.vue'
-import ScrollTopComponent from './ScrollTopComponent.vue'
+import ScrollTopComponent from '@/components/ScrollTopComponent.vue'
 import { mapActions } from 'pinia'
 
 export default {
   components: {
     NavbarComponent,
-    FooterComponent,
     ProgressTrackerComponent,
+    FooterComponent,
     ScrollTopComponent
   },
   methods: {
     ...mapActions(productStore, ['handleScroll', 'goTop'])
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeUmount() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>

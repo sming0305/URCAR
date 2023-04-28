@@ -2,7 +2,6 @@
   <header>
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top bg-transparent px-md-5 py-10 bg-translucent-85"
-      :class="{ 'overflow-y-lg-scroll': this.$route.name === 'home' }"
     >
       <div class="container-fluid justify-content-between">
         <h1 class="m-0">

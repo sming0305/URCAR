@@ -11,7 +11,7 @@ export default defineStore('homePageStore', {
     productPagination: {},
     currentRoute: '',
     category: 'all',
-    offsetTop: 0
+    showBackToTop: 0
   }),
   actions: {
     getProduct(router, id) {
@@ -75,30 +75,17 @@ export default defineStore('homePageStore', {
       })
       return result
     },
-    handleScroll(e) {
-      if (e === window) {
-        console.log(window.scrollY)
-        this.offsetTop = window.scrollY
+    handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const windowHeight = window.innerHeight
+      if (scrollTop > windowHeight * 0.5) {
+        this.showBackToTop = true
       } else {
-        this.offsetTop = e.target.scrollTop
+        this.showBackToTop = false
       }
     },
-    goTop(route) {
-      if (route.name === 'home') {
-        const banner = document.getElementsByClassName('scroll-card')
-        banner[0].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest'
-        })
-      } else if (route.name !== 'home') {
-        const mainTop = document.getElementsByTagName('main')
-        mainTop[0].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest'
-        })
-      }
+    goTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   },
   getters: {

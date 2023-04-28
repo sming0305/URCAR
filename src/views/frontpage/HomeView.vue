@@ -1,7 +1,7 @@
 <template>
-  <main class="scroll-full-page">
+  <main>
     <swiper-container
-      class="scroll-card"
+      class=""
       :effect="'fade'"
       :loop="true"
       :pagination="{
@@ -138,7 +138,7 @@
         <div class="swiper-pagination"></div>
       </swiper-slide>
     </swiper-container>
-    <section class="py-30 scroll-card" style="min-height: 100vh">
+    <section class="py-30" style="min-height: 100vh">
       <div class="container h-100 pt-30">
         <div class="mb-30">
           <h2 class="fs-20 fw-bold border-bottom border-2 pb-15 border-dark mb-30">熱門方案</h2>
@@ -151,7 +151,7 @@
         </div>
       </div>
     </section>
-    <section class="scroll-card bg-black pb-30">
+    <section class="bg-black pb-30">
       <div class="container">
         <div class="d-lg-flex">
           <div class="flex-shrink-1">
@@ -174,7 +174,7 @@
         </div>
       </div>
     </section>
-    <section class="py-30 scroll-card" style="min-height: 100vh">
+    <section class="py-30" style="min-height: 100vh">
       <div class="container h-100 pt-30">
         <div class="mb-20">
           <h2 class="fs-20 fw-bold border-bottom border-2 pb-15 border-dark mb-15">消息速覽</h2>
@@ -187,19 +187,16 @@
         </div>
       </div>
     </section>
-    <FooterComponent />
   </main>
 </template>
 
 <script>
 import ProductCardComponent from '@/components/ProductCardComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 import ArticleCardComponent from '@/components/ArticleCardComponent.vue'
 
 export default {
   components: {
     ProductCardComponent,
-    FooterComponent,
     ArticleCardComponent
   }
 }

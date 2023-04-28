@@ -1,7 +1,7 @@
 <template>
   <i
     class="fas fa-arrow-circle-up position-fixed scrollTopButton"
-    v-if="offsetTop > 300"
+    v-if="showBackToTop === true"
     @click="goTop(this.$route)"
     ><span class="bg-white tag"></span
   ></i>
@@ -15,7 +15,7 @@ export default {
     ...mapActions(productStore, ['goTop'])
   },
   computed: {
-    ...mapState(productStore, ['offsetTop']),
+    ...mapState(productStore, ['showBackToTop']),
     windowScrollY() {
       if (window.scrollY === 0) {
         console.log(window.scrollY === 0)
