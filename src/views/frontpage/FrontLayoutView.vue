@@ -12,7 +12,7 @@
   <RouterView></RouterView>
   <FooterComponent></FooterComponent>
   <ScrollTopComponent />
-  <LoadingComponent></LoadingComponent>
+  <LoadingComponent v-if="this.$route.name === 'home'"></LoadingComponent>
 </template>
 
 <script>

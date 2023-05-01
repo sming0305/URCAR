@@ -10,9 +10,8 @@
       transition="my-fade-transition"
     >
       <template #default>
-        <div class="loading-spinner p-10">
-          <img class="animated-img" src="../../public/tesla_icon.png" />
-          <div class="spinner-border"></div>
+        <div class="loading-circle d-flex align-items-center justify-content-center">
+          <img class="animated-img" src="../../public/64_tesla_icon.png" />
         </div>
       </template>
     </loading>
@@ -73,7 +72,7 @@ export default {
 <style lang="scss">
 .my-fade-transition-enter-active,
 .my-fade-transition-leave-active {
-  transition: opacity 0.6s;
+  transition: opacity 0.9s;
 }
 .my-fade-transition-enter,
 .my-fade-transition-leave-to {
@@ -81,32 +80,37 @@ export default {
 }
 
 .animated-img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  @media (min-width: 576px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 
-.loading-spinner {
+.loading-circle {
   position: relative;
   display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 
-.spinner-border {
+.loading-circle:before {
+  content: '';
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  border: 4px solid black;
+  width: 80px;
+  height: 80px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
   border-radius: 50%;
-  animation: spin 2s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }

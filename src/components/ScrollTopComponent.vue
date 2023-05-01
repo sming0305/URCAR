@@ -1,6 +1,7 @@
 <template>
   <i
     class="fas fa-arrow-circle-up position-fixed scrollTopButton"
+    style="z-index: 10001"
     v-if="showBackToTop === true"
     @click="goTop(this.$route)"
     ><span class="bg-white tag"></span

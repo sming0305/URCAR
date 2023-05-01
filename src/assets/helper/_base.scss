@@ -4,6 +4,14 @@ body,
   height: 100%;
 }
 
+header {
+  z-index: 10000;
+}
+
+footer {
+  z-index: 10000;
+}
+
 main {
   flex-grow: 1;
 }
