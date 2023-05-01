@@ -10,12 +10,13 @@
                 <img
                   src="https://images.unsplash.com/photo-1549822701-09dcb3dd5ef2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                   alt="URCAR-tesla"
-                  class="h-100"
                 />
               </div>
               <div class="col-12 col-lg-6">
                 <div class="text-start">
-                  <p class="mb-10">高端特斯拉汽車租賃品牌，致力於為客戶提供高品質、安全和可靠的汽車租賃服務。</p>
+                  <p class="mb-10">
+                    高端特斯拉汽車租賃品牌，致力於為客戶提供高品質、安全和可靠的汽車租賃服務。
+                  </p>
                   <p>
                     URCAR
                     旨在為現代旅行者提供一種舒適、便捷和環保的交通方式，讓每位租戶享受無憂的旅程。
