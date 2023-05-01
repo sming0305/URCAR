@@ -16,6 +16,7 @@ import VueSweetalert2 from 'vue-sweetalert2'
 import 'vue-step-progress/dist/main.css'
 import 'v-calendar/style.css'
 import 'animate.css'
+import 'aos/dist/aos.css'
 import './assets/all.scss'
 
 const app = createApp(App)

@@ -1,6 +1,12 @@
 <template>
   <ul class="row row-cols-1 row-cols-lg-3 g-10">
-    <li class="col" v-for="product in showProductList" :key="product.title">
+    <li
+      class="col"
+      v-for="(product, index) in showProductList"
+      :key="product.title"
+      :data-aos="aos"
+      :data-aos-delay="300 * index"
+    >
       <RouterLink
         :to="`/product/${product.id}`"
         class="card h-100 rounded-0 border-0 justify-content-between text-dark"
@@ -38,14 +44,23 @@ import productStore from '../stores/productStore'
 import { mapActions, mapState } from 'pinia'
 
 export default {
+  data() {
+    return {
+      routeName: ''
+    }
+  },
   methods: {
     ...mapActions(productStore, ['getProduct'])
   },
   computed: {
-    ...mapState(productStore, ['showProductList'])
+    ...mapState(productStore, ['showProductList']),
+    aos() {
+      return this.routeName === 'home' ? 'fade-up' : ''
+    }
   },
   mounted() {
     this.getProduct(this.$route.name)
+    this.routeName = this.$route.name
   }
 }
 </script>

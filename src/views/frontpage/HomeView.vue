@@ -159,15 +159,18 @@
               src="https://tesla-cdn.thron.com/delivery/public/image/tesla/649c549e-12b4-40c6-9294-7e996b8d3ccb/bvlatuR/std/4096x3071/Model-S-Specs-Hero-Desktop-LHD"
               alt="Model S"
               style="max-height: 550px"
+              data-aos="zoom-in"
+              data-aos-duration="1500"
             />
           </div>
           <div class="d-flex align-items-center flex-column justify-content-center flex-shrink-0">
-            <p class="fw-bold text-white fs-16 mb-12 text-md-start text-center">
+            <p class="fw-bold text-white fs-16 mb-12 text-md-start text-center" data-aos="flip-up">
               Model S，體驗無與倫比的駕馭樂趣
             </p>
             <RouterLink
               to="/product/-NQNaOmzZubS9jTYs7zF"
               class="btn btn-outline-light rounded-0 px-20"
+              data-aos="flip-down"
               >立即預約</RouterLink
             >
           </div>
