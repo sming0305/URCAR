@@ -36,9 +36,11 @@ export default {
     ...mapActions(productStore, ['handleScroll', 'goTop'])
   },
   mounted() {
+    // 監聽滾動事件，在所有頁面中監控滾動距離螢幕頂部的距離(用於判斷是否顯示回到頂部按鈕)
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeUmount() {
+    // 離開頁面時移除監聽事件
     window.removeEventListener('scroll', this.handleScroll)
   }
 }

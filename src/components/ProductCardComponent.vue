@@ -55,11 +55,15 @@ export default {
   computed: {
     ...mapState(productStore, ['showProductList']),
     aos() {
+      // computed 監控 routeName 的變化，並回傳 aos 動畫效果
+      // 若是在首頁，則回傳 fade-up，否則回傳空字串不使用動畫
       return this.routeName === 'home' ? 'fade-up' : ''
     }
   },
   mounted() {
+    // 取得商品資料
     this.getProduct(this.$route.name)
+    // 取得當前路由名稱並存入 data 中
     this.routeName = this.$route.name
   }
 }
